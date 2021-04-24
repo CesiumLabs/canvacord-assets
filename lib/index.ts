@@ -19,6 +19,13 @@ class AssetManager {
             const name = file.split(".")[0];
             this.data[name] = `${this.dir}/${file}`;
         }
+
+        this.loaded = true;
+    }
+
+    clear() {
+        this.data = {};
+        this.loaded = false;
     }
 
     get(name: string) {
