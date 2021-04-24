@@ -6,4 +6,4 @@ There is no need of installing this package manually.
 
 - [Canvacord](https://npmjs.com/package/canvacord)
 - [@canvacord/assets](https://npmjs.com/package/@canvacord/assets)
-- [GitHub](https://github.com/DevSnowflake/canvacord/tree/assets)
+- [GitHub](https://github.com/DevSnowflake/canvacord-assets)
