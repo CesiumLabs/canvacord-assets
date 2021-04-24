@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "description": "Assets used in Canvacord",
   "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist",
     "data"
