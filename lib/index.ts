@@ -16,7 +16,7 @@ class AssetManager {
         const files = await fs.readdir(this.dir);
 
         for (const file of files) {
-            const name = file.split(".")[0];
+            const name = file.split(".").shift();
             this.data[name] = `${this.dir}/${file}`;
         }
 
@@ -30,6 +30,14 @@ class AssetManager {
 
     get(name: string) {
         return this.data[name];
+    }
+    
+    set(name: string, data: string) {
+        return this.data[name] = data;
+    }
+    
+    get size() {
+        return Object.keys(this.data).length;
     }
 }
 
