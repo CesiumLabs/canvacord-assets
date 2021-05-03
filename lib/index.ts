@@ -17,7 +17,7 @@ class AssetManager {
 
         for (const file of files) {
             const name = file.split(".").shift() ?? file;
-            this.data[name] = `${this.dir}/${file}`;
+            this.data[name] = `${this.dir}\\${file}`;
         }
 
         this.loaded = true;
@@ -42,8 +42,8 @@ class AssetManager {
 }
 
 export = {
-    font: new AssetManager(path.join(__dirname, "data", "fonts")),
-    image: new AssetManager(path.join(__dirname, "data", "images")),
+    font: new AssetManager(path.join(__dirname, "..", "data", "fonts")),
+    image: new AssetManager(path.join(__dirname, "..", "data", "images")),
     utils: {
         AssetManager
     }
