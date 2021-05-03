@@ -16,7 +16,7 @@ class AssetManager {
         const files = await fs.readdir(this.dir);
 
         for (const file of files) {
-            const name = file.split(".").shift();
+            const name = file.split(".").shift() ?? file;
             this.data[name] = `${this.dir}/${file}`;
         }
 
