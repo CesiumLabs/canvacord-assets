@@ -16,7 +16,7 @@ class AssetManager {
         const files = await fs.readdir(this.dir);
 
         for (const file of files) {
-            const name = file.split(".").shift() ?? file;
+            const name = (file.split(".").shift() ?? file).toUpperCase();
             this.data[name] = `${this.dir}\\${file}`;
         }
 
@@ -33,7 +33,7 @@ class AssetManager {
     }
     
     set(name: string, data: string) {
-        return this.data[name] = data;
+        return this.data[name.toUpperCase()] = data;
     }
     
     get size() {
