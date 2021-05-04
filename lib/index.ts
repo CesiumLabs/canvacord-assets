@@ -17,7 +17,7 @@ class AssetManager {
 
         for (const file of files) {
             const name = (file.split(".").shift() ?? file).toUpperCase();
-            this.data[name] = `${this.dir}\\${file}`;
+            this.data[name] = `${this.dir}/${file}`;
         }
 
         this.loaded = true;
