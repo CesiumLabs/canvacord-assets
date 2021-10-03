@@ -1,19 +1,28 @@
-import { promises as fs } from "fs";
+import { promises as fs, readdirSync } from "fs";
 import path from "path";
 
 class AssetManager {
-    dir: string;
     loaded: boolean;
     data: Record<string, string>;
 
-    constructor(dir: string) {
-        this.dir = dir;
+    constructor(public dir: string) {
         this.loaded = false;
         this.data = {};
     }
 
     async load() {
         const files = await fs.readdir(this.dir);
+
+        for (const file of files) {
+            const name = (file.split(".").shift() ?? file).toUpperCase();
+            this.data[name] = `${this.dir}/${file}`;
+        }
+
+        this.loaded = true;
+    }
+
+    loadSync() {
+        const files = readdirSync(this.dir);
 
         for (const file of files) {
             const name = (file.split(".").shift() ?? file).toUpperCase();
